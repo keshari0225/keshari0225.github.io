@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keshari, UMN</title>
     <meta name="author" content="Keshari Nandan">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <style>
         body {
@@ -13,46 +13,32 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* Add some top padding to avoid overlap with fixed navbar */
-            padding-top: 60px;
+            flex-direction: column; /* Changed to column for nav and content layout */
         }
-        nav {
-            width: 100%;
-            position: fixed; /* Fix the navigation bar to the top */
-            top: 0; /* Align it at the top */
-            left: 0; /* Align it to the left */
-            background-color: #333; /* Background color */
-            z-index: 1000; /* Ensure it's above other content */
+        /* Navigation Bar Styling */
+        .navbar {
+            background-color: #333; /* Dark background */
+            overflow: hidden; /* Clear floats */
         }
-        ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-            margin: 0; /* Remove margin */
-            display: flex; /* Flex layout */
-            justify-content: center; /* Center items */
+        .navbar a {
+            float: left; /* Aligns links to the left */
+            display: block; /* Makes the link fill the space */
+            color: white; /* White text color */
+            text-align: center; /* Centered text */
+            padding: 14px 20px; /* Padding for the links */
+            text-decoration: none; /* Removes underline */
         }
-        li {
-            margin: 0 15px; /* Margin between items */
-        }
-        a {
-            color: white; /* Text color */
-            text-decoration: none; /* Remove underline */
-            padding: 14px 20px; /* Padding for each link */
-            display: block; /* Make the link fill the list item */
-            transition: background-color 0.3s; /* Smooth background color change */
-        }
-        a:hover {
-            background-color: #575757; /* Change background on hover */
+        .navbar a:hover {
+            background-color: #ddd; /* Light background on hover */
+            color: black; /* Dark text color on hover */
         }
         .gallery-container {
             display: grid;
-            grid-template-columns: repeat(1, 1fr); /* Set to one column */
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Responsive columns */
             gap: 20px;
             max-width: 1200px;
             width: 100%; /* Ensure it uses the full width of the container */
-            margin-top: 20px; /* Margin on top to separate from the navbar */
+            margin: 20px auto; /* Center the gallery container */
         }
         .gallery-item {
             position: relative;
@@ -101,24 +87,14 @@
     </style>
 </head>
 <body>
-
+    
     <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="gallery.html">Gallery</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-            <li>
-                <a href="contact.html">Contact</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
 
     <div class="gallery-container">
         <div class="gallery-item" onclick="showPopup('./images/Stone_Arch_bridge.jpg')">
@@ -135,15 +111,16 @@
         </div>
         <div class="gallery-item" onclick="showPopup('./images/India_PTR.jpg')">
             <img src="./images/India_PTR.jpg" alt="Image 5">
-            <div class="caption">Caption for Image 5</div>
+            <div class="caption">Panna Tiger Reserve (M. P.) India</div>
+            <div class="caption">A prime tiger-land located in Vindhyan Hills in northern Madhya Pradesh.</div>
         </div>
         <div class="gallery-item" onclick="showPopup('./images/PTR_2.jpg')">
             <img src="./images/PTR_2.jpg" alt="Image 6">
-            <div class="caption">Caption for Image 6</div>
+            <div class="caption">Deer in Panna Tiger Reserve</div>
         </div>
         <div class="gallery-item" onclick="showPopup('./images/PTR_3.jpg')">
             <img src="./images/PTR_3.jpg" alt="Image 6">
-            <div class="caption">Caption for Image 6</div>
+            <div class="caption">Sun Rise in Panna Tiger Reserve</div>
         </div>
     </div>
 
