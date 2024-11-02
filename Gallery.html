@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshari, UMN</title>
+    <meta name="author" content="Keshari Nandan">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Set to one column */
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%; /* Ensure it uses the full width of the container */
+        }
+        .gallery-item {
+            position: relative;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .caption {
+            padding: 10px;
+            text-align: center;
+            background-color: #f8f8f8;
+            font-size: 14px;
+        }
+        /* Pop-up styling */
+        .popup {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="gallery-container">
+        <div class="gallery-item" onclick="showPopup('./images/Stone_Arch_bridge.jpg')">
+            <img src="./images/Stone_Arch_bridge.jpg" alt="SA_1">
+            <div class="caption">Stone Arch Bridge from SE Main St, Minneapolis, MN</div>
+        </div>
+        <div class="gallery-item" onclick="showPopup('./images/SA2.jpg')">
+            <img src="./images/SA2.jpg" alt="Image 2">
+            <div class="caption">SE Main St, Minneapolis, MN</div>
+        </div>
+        <div class="gallery-item" onclick="showPopup('./images/Snow_1.jpg')">
+            <img src="./images/Snow_1.jpg" alt="Image 4">
+            <div class="caption">Near the UMN East Bank Campus</div>
+        </div>
+        <div class="gallery-item" onclick="showPopup('./images/India_PTR.jpg')">
+            <img src="./images/India_PTR.jpg" alt="Image 5">
+            <div class="caption">Panna Tiger Reserve (M. P.) India</div>
+			 <div class="caption">A prime tiger-land Located in Vindhyan Hills in northern Madhya Pradesh.</div>
+
+
+        </div>
+        <div class="gallery-item" onclick="showPopup('./images/PTR_2.jpg')">
+            <img src="./images/PTR_2.jpg" alt="Image 6">
+            <div class="caption">Deer in Panna Tiger Reserve</div>
+        </div>
+        <div class="gallery-item" onclick="showPopup('./images/PTR_3.jpg')">
+            <img src="./images/PTR_3.jpg" alt="Image 6">
+            <div class="caption">Sun Rise in Panna Tiger Reserve</div>
+        </div>
+    </div>
+
+    <!-- Pop-up Container -->
+    <div id="popup" class="popup" onclick="closePopup()">
+        <span class="close" onclick="closePopup(event)">&times;</span>
+        <img id="popup-img" src="">
+    </div>
+
+    <script>
+        function showPopup(imageSrc) {
+            document.getElementById('popup-img').src = imageSrc;
+            document.getElementById('popup').style.display = 'flex'; // Show the popup
+        }
+
+        function closePopup(event) {
+            if (event) event.stopPropagation(); // Prevent triggering the popup close when clicking on the close button
+            document.getElementById('popup').style.display = 'none'; // Hide the popup
+        }
+    </script>
+</body>
+</html>
