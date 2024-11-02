@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keshari, UMN</title>
     <meta name="author" content="Keshari Nandan">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <style>
         body {
@@ -18,15 +18,19 @@
         /* Navigation Bar Styling */
         .navbar {
             background-color: #333; /* Dark background */
-            overflow: hidden; /* Clear floats */
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center items horizontally */
+            padding: 10px 0; /* Vertical padding */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
         }
         .navbar a {
-            float: left; /* Aligns links to the left */
+            margin: 0 15px; /* Spacing between links */
             display: block; /* Makes the link fill the space */
             color: white; /* White text color */
             text-align: center; /* Centered text */
-            padding: 14px 20px; /* Padding for the links */
+            padding: 10px 15px; /* Padding for the links */
             text-decoration: none; /* Removes underline */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
         .navbar a:hover {
             background-color: #ddd; /* Light background on hover */
@@ -90,8 +94,10 @@
     
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="./index.html">Home</a>
-        <a href="./Gallery.html">Gallery</a>
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </div>
 
     <div class="gallery-container">
