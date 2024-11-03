@@ -9,7 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+
+
+	   <style>
+        #view-counter {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #f1f1f1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
   </head>
 
   <body>
@@ -97,7 +110,13 @@
   </tbody>
 </table>
 
+    <iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.644489336873!2d-93.23488302321653!3d44.974286365992256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32d17b0db0b6f%3A0x11e70f2b371279c9!2sKenneth%20H.%20Keller%20Hall!5e1!3m2!1sen!2sus!4v1730655395021!5m2!1sen!2sus" 
+width="800" 
+height="450" 
+style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
+             
             
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -116,4 +135,24 @@
       </tr>
     </table>
   </body>
+
+
+	<!-- View Counter -->
+    <div id="view-counter"></div>
+
+    <script>
+        // Check if the counter exists in localStorage
+        if (localStorage.getItem('page_view_count')) {
+            // Increment the count
+            let count = parseInt(localStorage.getItem('page_view_count'), 10);
+            count += 1;
+            localStorage.setItem('page_view_count', count);
+            document.getElementById('view-counter').innerText = `Page views (private): ${count}`;
+        } else {
+            // Initialize the counter
+            localStorage.setItem('page_view_count', 1);
+            document.getElementById('view-counter').innerText = 'Page views (private): 1';
+        }
+    </script>
+	
 </html>
