@@ -11,18 +11,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 
-	   <style>
-        #view-counter {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background-color: #f1f1f1;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+	
   </head>
 
   <body>
@@ -137,36 +126,6 @@ style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-
   </body>
 
 
-	<!-- View Counter -->
-    <div id="view-counter"></div>
 
-    <script>
-        // Check if the counter exists in localStorage
-        if (localStorage.getItem('page_view_count')) {
-            // Increment the count
-            let count = parseInt(localStorage.getItem('page_view_count'), 10);
-            count += 1;
-            localStorage.setItem('page_view_count', count);
-            document.getElementById('view-counter').innerText = `Page views (private): ${count}`;
-        } else {
-            // Initialize the counter
-            localStorage.setItem('page_view_count', 1);
-            document.getElementById('view-counter').innerText = 'Page views (private): 1';
-        }
-    </script>
-
-	 <div id="admin-counter" style="display: none;">
-    <p id="admin-view-counter"></p>
-</div>
-
-<script>
-    // Replace with a condition to check if the current user is an admin
-    const isAdmin = true; // Change to actual authentication logic
-
-    if (isAdmin) {
-        document.getElementById('admin-counter').style.display = 'block';
-        // Display your private counter logic here
-    }
-</script>
 	
 </html>
