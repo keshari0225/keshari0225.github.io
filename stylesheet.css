@@ -74,6 +74,12 @@ a:hover {
   text-decoration: none;
 }
 
+body {
+  background-color: #ffffff;
+  color: #f1f1f1;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
 body,
 td,
 th,
